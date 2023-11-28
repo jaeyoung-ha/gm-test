@@ -16,6 +16,11 @@ spec:
     spec:
       nodeSelector:
         nodeType: cpu-node
+      tolerations:
+      - effect: "NoSchedule"
+        key: "cpuIntensive"
+        operator: "Equal"
+        value: "true"
       containers:
       - name: demoapp-service
         image: kustomization-eks-repository
