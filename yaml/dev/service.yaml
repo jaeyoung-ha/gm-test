@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demoapp-service-svc
+  labels:
+    app: demoapp-service
+spec:
+  ports:
+    - port: 8100
+      targetPort: 8100
+      protocol: TCP
+  selector:
+    app: demoapp-service
+  type:
+    LoadBalancer
